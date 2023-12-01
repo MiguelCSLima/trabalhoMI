@@ -1,6 +1,8 @@
 # Trabalho - Banco de Dados I
 Trabalho de Modelagem de Informações / Banco de Dados I.
 
+**Data Entrega: 01/12/2023**
+
 **Projeto II -** A Equipe deve criar o DDL e DML da Cafeteria com referência ao diagrama ER realizado anteriormente. Ademais, a Equipe deve, além de responder as questões abaixo, elaborar e resolver 5 questões, em ordem crescente de complexidade.
 
 **Consultas criadas pelo Professor:**
