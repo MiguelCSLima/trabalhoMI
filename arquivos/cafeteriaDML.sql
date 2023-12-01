@@ -35,7 +35,7 @@ INSERT INTO Ingrediente (ID, descricao, validade, quantidade, preco, nome, dataC
 
 -- Inserir dados na tabela Funcionario
 INSERT INTO Funcionario (ID, telefone, salario, endereco, CPF, nome) VALUES
-(1, '987654321', 3500.00, 'Rua Principal, 111', '11122233344', 'Bob Jeffy'),
+(1, '987654321', 3500.00, 'Rua Principal, 111', '11122233344', 'Roberto Cruz'),
 (2, '123456789', 2800.00, 'Avenida Secundária, 222', '55566677788', 'Leonardo Pedra'),
 (3, '999888777', 4000.00, 'Rua do Terceiro, 333', '33344455566', 'Lucia da Silva'),
 (4, '444555666', 2500.00, 'Avenida Quartenal, 444', '77788899900', 'Felipe Peixoto'),
