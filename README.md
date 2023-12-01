@@ -1,4 +1,4 @@
-# trabalhoMI
+# Trabalho - Banco de Dados I
 Trabalho de Modelagem de Informações / Banco de Dados I.
 
 Projeto II - A Equipe deve, além de responder as questões abaixo, elaborar e resolver 5 questões, em ordem crescente de complexidade.
