@@ -1,3 +1,5 @@
+CREATE DATABASE CAFETERIA;
+
 -- Tabela Cliente
 CREATE TABLE Cliente (
     ID INT PRIMARY KEY,
@@ -35,6 +37,24 @@ CREATE TABLE Fornecedor (
     CNPJ VARCHAR(14)
 );
 
+-- Tabela Gerente
+CREATE TABLE Gerente (
+    ID_Funcionario INT PRIMARY KEY,
+		FOREIGN KEY (ID_Funcionario) REFERENCES Funcionario(ID)
+);
+
+-- Tabela Atendente
+CREATE TABLE Atendente (
+    ID_Funcionario INT PRIMARY KEY,
+		FOREIGN KEY (ID_Funcionario) REFERENCES Funcionario(ID)
+);
+
+-- Tabela Barista
+CREATE TABLE Barista (
+    ID_Funcionario INT PRIMARY KEY,
+		FOREIGN KEY (ID_Funcionario) REFERENCES Funcionario(ID)
+);
+
 -- Tabela Pedidos Fornecedor
 CREATE TABLE PedidosFornecedor (
     ID INT PRIMARY KEY,
@@ -43,32 +63,12 @@ CREATE TABLE PedidosFornecedor (
     dataPedido DATE,
     quantidade INT,
     custo FLOAT,
-    	ID_Fornecedor INT,
-    	FOREIGN KEY (ID_Fornecedor) REFERENCES Fornecedor(ID),
-	ID_Ingrediente INT,
-    	FOREIGN KEY (ID_Ingrediente) REFERENCES Ingrediente(ID)
-);
-
--- Tabela Gerente
-CREATE TABLE Gerente (
-    ID_Funcionario INT PRIMARY KEY,
-    	ID_PedidosFornecedor INT,
-    	FOREIGN KEY (ID_PedidosFornecedor) REFERENCES PedidosFornecedor(ID),
-	FOREIGN KEY (ID_Funcionario) REFERENCES Funcionario(ID)
-);
-
--- Tabela Atendente
-CREATE TABLE Atendente (
-    	ID_Funcionario INT PRIMARY KEY,
-	FOREIGN KEY (ID_Funcionario) REFERENCES Funcionario(ID)
-);
-
--- Tabela Barista
-CREATE TABLE Barista (
-    ID_Funcionario INT PRIMARY KEY,
-    avaliacaoMedia FLOAT,
-    quantidadePedidos INT,
-	FOREIGN KEY (ID_Funcionario) REFERENCES Funcionario(ID)
+    ID_Fornecedor INT,
+    FOREIGN KEY (ID_Fornecedor) REFERENCES Fornecedor(ID),
+		ID_Gerente INT,
+		FOREIGN KEY (ID_Gerente) REFERENCES Gerente(ID_Funcionario),
+		ID_Ingrediente INT,
+    FOREIGN KEY (ID_Ingrediente) REFERENCES Ingrediente(ID)
 );
 
 -- Tabela NotaFiscal
@@ -76,8 +76,8 @@ CREATE TABLE NotaFiscal (
     ID INT PRIMARY KEY,
     dataPedido DATE,
     formaPagamento VARCHAR(50),
-    	ID_Cliente INT NULL,
-    	FOREIGN KEY (ID_Cliente) REFERENCES Cliente(ID)
+    ID_Cliente INT NULL,
+    FOREIGN KEY (ID_Cliente) REFERENCES Cliente(ID)
 );
 
 -- Tabela Produto
@@ -89,24 +89,24 @@ CREATE TABLE Produto (
     preco FLOAT
 );
 
--- Tabela ProdutoIngrediente
-CREATE TABLE ProdutoIngrediente (
-    	ID_Produto INT,
-    	ID_Ingrediente INT,
-    	PRIMARY KEY (ID_Produto, ID_Ingrediente),
-    	FOREIGN KEY (ID_Produto) REFERENCES Produto(ID),
-    	FOREIGN KEY (ID_Ingrediente) REFERENCES Ingrediente(ID)
-);
-
 -- Tabela Pedido
 CREATE TABLE Pedido (
     ID INT PRIMARY KEY,
-    avaliacao VARCHAR(255) NULL,
+    avaliacao FLOAT,
     estado VARCHAR(50),
-    	ID_NotaFiscal INT,
-    	FOREIGN KEY (ID_NotaFiscal) REFERENCES NotaFiscal(ID),
-    	ID_Barista INT,
-    	FOREIGN KEY (ID_Barista) REFERENCES Barista(ID_Funcionario),
-    	ID_Produto INT,
-    	FOREIGN KEY (ID_Produto) REFERENCES Produto(ID)
+    ID_NotaFiscal INT,
+    FOREIGN KEY (ID_NotaFiscal) REFERENCES NotaFiscal(ID),
+    ID_Barista INT,
+    FOREIGN KEY (ID_Barista) REFERENCES Barista(ID_Funcionario),
+    ID_Produto INT,
+    FOREIGN KEY (ID_Produto) REFERENCES Produto(ID)
+);
+
+-- Tabela ProdutoIngrediente
+CREATE TABLE ProdutoIngrediente (
+    ID_Produto INT,
+    ID_Ingrediente INT,
+    PRIMARY KEY (ID_Produto, ID_Ingrediente),
+    FOREIGN KEY (ID_Produto) REFERENCES Produto(ID),
+    FOREIGN KEY (ID_Ingrediente) REFERENCES Ingrediente(ID)
 );
