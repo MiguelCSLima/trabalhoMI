@@ -1,7 +1,7 @@
 # Trabalho - Banco de Dados I
 Trabalho de Modelagem de Informações / Banco de Dados I.
 
-**Projeto II -** A Equipe deve, além de responder as questões abaixo, elaborar e resolver 5 questões, em ordem crescente de complexidade.
+**Projeto II -** A Equipe deve criar o DDL e DML da Cafeteria com referência ao diagrama ER realizado anteriormente. Ademais, a Equipe deve, além de responder as questões abaixo, elaborar e resolver 5 questões, em ordem crescente de complexidade.
 
 **Consultas a serem feitas pela Equipe:**
   1. Retornar o nome e as notas de avaliação dos baristas
