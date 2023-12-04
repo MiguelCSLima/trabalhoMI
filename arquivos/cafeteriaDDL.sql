@@ -40,22 +40,22 @@ CREATE TABLE Fornecedor (
 -- Tabela Gerente
 CREATE TABLE Gerente (
     ID_Funcionario INT PRIMARY KEY,
-		FOREIGN KEY (ID_Funcionario) REFERENCES Funcionario(ID)
+    FOREIGN KEY (ID_Funcionario) REFERENCES Funcionario(ID)
 );
 
 -- Tabela Atendente
 CREATE TABLE Atendente (
     ID_Funcionario INT PRIMARY KEY,
-		FOREIGN KEY (ID_Funcionario) REFERENCES Funcionario(ID)
+    FOREIGN KEY (ID_Funcionario) REFERENCES Funcionario(ID)
 );
 
 -- Tabela Barista
 CREATE TABLE Barista (
     ID_Funcionario INT PRIMARY KEY,
-		FOREIGN KEY (ID_Funcionario) REFERENCES Funcionario(ID)
+    FOREIGN KEY (ID_Funcionario) REFERENCES Funcionario(ID)
 );
 
--- Tabela Pedidos Fornecedor
+-- Tabela PedidosFornecedor
 CREATE TABLE PedidosFornecedor (
     ID INT PRIMARY KEY,
     descricao VARCHAR(255) NULL,
@@ -65,9 +65,9 @@ CREATE TABLE PedidosFornecedor (
     custo FLOAT,
     ID_Fornecedor INT,
     FOREIGN KEY (ID_Fornecedor) REFERENCES Fornecedor(ID),
-		ID_Gerente INT,
-		FOREIGN KEY (ID_Gerente) REFERENCES Gerente(ID_Funcionario),
-		ID_Ingrediente INT,
+    ID_Gerente INT,
+    FOREIGN KEY (ID_Gerente) REFERENCES Gerente(ID_Funcionario),
+    ID_Ingrediente INT,
     FOREIGN KEY (ID_Ingrediente) REFERENCES Ingrediente(ID)
 );
 
