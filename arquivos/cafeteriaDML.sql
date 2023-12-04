@@ -104,9 +104,17 @@ INSERT INTO PedidosFornecedor (ID, descricao, dataChegada, dataPedido, quantidad
 (12, 'Pedido de Presunto', '2023-01-12', '2023-01-10', 820, 580.00, 2, 1, 12);
 
 -- Inserir dados na tabela Pedido
-INSERT INTO Pedido (ID, avaliacao, estado, ID_NotaFiscal, ID_Barista, ID_Produto) VALUES
-(1, 5.0, 'Concluído', 1, 4, 1),
-(2, 4.0, 'Concluído', 2, 4, 2),
-(3, 3.0, 'Concluído', 3, 4, 3),
-(4, 4.5, 'Concluído', 4, 5, 4),
-(5, 3.0, 'Em andamento', 5, 5, 2);
+INSERT INTO Pedido (ID, avaliacao, estado, ID_NotaFiscal, ID_Barista) VALUES
+(1, 5.0, 'Concluído', 1, 4),
+(2, 4.0, 'Concluído', 2, 4),
+(3, 3.0, 'Concluído', 3, 4),
+(4, 4.5, 'Concluído', 4, 5),
+(5, 3.0, 'Em andamento', 5, 5);
+
+-- Inserir dados na tabela PedidoProduto
+INSERT INTO PedidoProduto (ID_Pedido, ID_Produto, quantidade) VALUES
+(1, 1, 1),
+(2, 2, 3),
+(3, 3, 5),
+(4, 4, 2),
+(5, 2, 3);
