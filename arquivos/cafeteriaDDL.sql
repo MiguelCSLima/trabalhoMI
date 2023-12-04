@@ -97,8 +97,16 @@ CREATE TABLE Pedido (
     ID_NotaFiscal INT,
     FOREIGN KEY (ID_NotaFiscal) REFERENCES NotaFiscal(ID),
     ID_Barista INT,
-    FOREIGN KEY (ID_Barista) REFERENCES Barista(ID_Funcionario),
+    FOREIGN KEY (ID_Barista) REFERENCES Barista(ID_Funcionario)
+);
+
+-- Tabela PedidoProduto
+CREATE TABLE PedidoProduto (
+    ID_Pedido INT,
     ID_Produto INT,
+    quantidade INT,
+    PRIMARY KEY (ID_Pedido, ID_Produto),
+    FOREIGN KEY (ID_Pedido) REFERENCES Pedido(ID),
     FOREIGN KEY (ID_Produto) REFERENCES Produto(ID)
 );
 
